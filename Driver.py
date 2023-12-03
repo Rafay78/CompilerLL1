@@ -1,4 +1,5 @@
 from main import tokenize, syntax_analyzer
+# from syntaxanalyzer import *
 from Token import Token
 import os
 
@@ -12,6 +13,7 @@ for token in tokenize(code):
 # tokens.append(Token(class_part="EOF",column=None,line=None,value="$"))
 for token in tokens:
     print(token)
+
 
 if syntax_analyzer(tokens):
     print("Syntax is correct.")

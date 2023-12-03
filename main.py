@@ -68,7 +68,7 @@ def syntax_analyzer(tokens):
     def match(*expected_class_part):
         nonlocal token_index
         try:
-            if tokens[token_index].class_part in expected_class_part:
+            if tokens[token_index].class_part in expected_class_part or tokens[token_index].value in expected_class_part:
                 print("----------> {token} with {class_part}".format(token=tokens[token_index].value, class_part=tokens[token_index].class_part))
                 token_index += 1
                 return True
@@ -90,6 +90,220 @@ def syntax_analyzer(tokens):
     def SST():
         if initialize():
             return True
+        elif func_call():
+            return True
+
+    def func_call():
+        if match("ID"):
+            if match("OP_BRACE"):
+                if args():
+                    pass
+
+    def args():
+        if f_OE():
+            if match(","):
+                if args():
+                    return True
+            else:
+                return True
+        return False
+
+#<<<<<<<<<<<<<<<<<<Expression>>>>>>>>>>>>>>>>>>>>>>>>>
+
+    def f_OE():
+        global index
+        if match("ID","FINT", "DOUBLE_QUOTE_STRING_CONST", "CHAR", "BOOL", "(", "!", "UNARY_OPS"):
+            if f_AE() and f_OE1():
+                return True
+
+        return False
+
+    def f_OE1():
+        if match("COMPOUND_COMP_OPS", ",", "END", "}", ")"):
+            if f_AE() and f_OE1():
+                return True
+
+        return False
+
+    def f_AE():
+        if match("ID", "FINT", "DOUBLE_QUOTE_STRING_CONST", "BOOL", "CHAR", "(", "!", "UNARY_OPS"):
+            if f_RE() and f_AE1():
+                return True
+
+        return False
+
+    def f_AE1():
+        global index
+        if ts[index][cp] == "&&" or ts[index][cp] == "||" or ts[index][cp] == "," or ts[index][cp] == ";" or ts[index][
+            cp] == "}" or ts[index][cp] == ")":
+
+            if ts[index][cp] == "&&":
+                index += 1
+                if f_RE() and f_AE1():
+                    return True
+
+        return False  # This is for the case where <AE'> can be null
+
+    def f_RE():
+        global index
+        if match("ID", "FINT", "DOUBLE_QUOTE_STRING_CONST", "BOOL", "CHAR", "(", "!", "UNARY_OPS"):
+            if f_E():
+                if f_RE1():
+                    return True
+
+        return False
+
+    def f_RE1():
+        global index
+        if ts[index][cp] in relational_operators or ts[index][cp] == "&&" or ts[index][cp] == "||" or ts[index][
+            cp] == "," or ts[index][cp] == ";" or ts[index][cp] == "}" or ts[index][cp] == ")":
+
+            if ts[index][cp] in relational_operators:
+                index += 1
+                if f_E():
+                    if f_RE1():
+                        return True
+        return False
+
+    def f_E():
+        global index
+        if match("ID", "FINT", "DOUBLE_QUOTE_STRING_CONST", "BOOL", "CHAR", "(", "!", "UNARY_OPS"):
+            if f_T():
+                if f_E1():
+                    return True
+        return False
+
+    def f_E1():
+        global index
+
+        if ts[index][cp] in PM or ts[index][cp] in relational_operators or ts[index][cp] == "&&" or ts[index][
+            cp] == "||" or ts[index][cp] == "," or ts[index][cp] == ";" or ts[index][cp] == "}" or ts[index][cp] == "]":
+            # Perform some action for newline values
+
+            if ts[index][cp] in PM:
+                index += 1
+                if f_T():
+                    if f_E1():
+                        return True
+        return False
+
+    def f_T():
+        global index
+        if match("ID", "FINT", "DOUBLE_QUOTE_STRING_CONST", "BOOL", "CHAR", "(", "!", "UNARY_OPS"):
+            if f_F():
+                if f_T1():
+                    return True
+        return False
+
+    def f_T1():
+        global index
+        if ts[index][cp] in MDM or ts[index][cp] in PM or ts[index][cp] in relational_operators or ts[index][
+            cp] == "&&" or ts[index][cp] == "||" or ts[index][cp] == "," or ts[index][cp] == ";" or ts[index][
+            cp] == "}" or ts[index][cp] == ")":
+
+            if ts[index][cp] in MDM:
+                index += 1
+                if f_F():
+                    if f_T1():
+                        return True
+        return False
+
+    def f_F():
+        if match("ID", "FINT", "DOUBLE_QUOTE_STRING_CONST", "BOOL", "CHAR", "(", "!", "UNARY_OPS"):
+            if match("ID"):
+                if f_dot():
+                    return True
+            elif f_const():
+                return True
+            elif match("("):
+                if f_OE():
+                    if match(")"):
+                        return True
+            elif match("!"):
+                if f_F():
+                    return True
+            else:
+                if match("UNARY_OPS"):
+                    if match("ID"):
+                        return True
+        return False
+
+    def f_dot():
+        global index
+        if ts[index][cp] == "." or ts[index][cp] == "(" or ts[index][cp] == "[" or ts[index][cp] in inc_decs:
+
+            if ts[index][cp] == ".":
+                index += 1
+                if ts[index][cp_] == "variable_pattern":
+                    index += 1
+                    if f_dot():
+                        return True
+            elif ts[index][cp] == "(":
+                index += 1
+                if f_param():
+                    if ts[index][cp] == ")":
+                        index += 1
+                        if ts[index][cp] == ".":
+                            index += 1
+                            if ts[index][cp_] == "variable_pattern":
+                                index += 1
+                                if f_dot():
+                                    return True
+            elif ts[index][cp] == "[":
+                index += 1
+                if f_OE():
+                    if ts[index][cp] == "]":
+                        index += 1
+                        if f_Dim():
+                            if ts[index][cp] == ".":
+                                index += 1
+                                if ts[index][cp_] == "variable_pattern":
+                                    index += 1
+                                    if f_dot():
+                                        return True
+            else:
+                if ts[index][cp] in ["++", "--"]:
+                    index += 1
+                    return True
+
+        return False
+
+    def f_Dim():
+        global index
+        if ts[index][cp] == "[" or ts[index][cp] == "." or ts[index][cp] == ";" or ts[index][cp] == "=":
+
+            if ts[index][cp] == "[":
+                index += 1
+                if f_OE():
+                    if ts[index][cp] == "]":
+                        index += 1
+                        return True
+        return False
+
+    def f_param():
+        global index
+        if ts[index][cp_] == "variable_pattern" or ts[index][cp] == "int_const" or ts[index][cp] == "float_const" or \
+                ts[index][cp] == "string_const" or ts[index][cp] == "char_const" or ts[index][cp] == "bool_const" or \
+                ts[index][cp] == "(" or ts[index][cp] == "!" or ts[index][cp] in inc_decs or ts[index][cp] == ")":
+
+            if f_OE():
+                if f_par():
+                    return True
+        return False
+
+    def f_par():
+        global index
+        if ts[index][cp] == "," or ts[index][cp] == ")":
+            if ts[index][cp] == ",":
+                index += 1
+                if f_OE():
+                    if f_par():
+                        return True
+        return False
+
+
+#<<<<<<<<<<<<<<<<<<Expression>>>>>>>>>>>>>>>>>>>>>>>>>
+
 
     def initialize():
         nonlocal token_index
