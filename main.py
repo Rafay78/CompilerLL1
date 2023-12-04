@@ -85,7 +85,7 @@ def syntax_analyzer(tokens):
         if SST():
            if Start():
               return True
-        return False
+        return True
 
     def SST():
         if initialize():
@@ -111,7 +111,6 @@ def syntax_analyzer(tokens):
 #<<<<<<<<<<<<<<<<<<Expression>>>>>>>>>>>>>>>>>>>>>>>>>
 
     def f_OE():
-        global index
         if match("ID","FINT", "DOUBLE_QUOTE_STRING_CONST", "CHAR", "BOOL", "(", "!", "UNARY_OPS"):
             if f_AE() and f_OE1():
                 return True
@@ -133,19 +132,14 @@ def syntax_analyzer(tokens):
         return False
 
     def f_AE1():
-        global index
-        if ts[index][cp] == "&&" or ts[index][cp] == "||" or ts[index][cp] == "," or ts[index][cp] == ";" or ts[index][
-            cp] == "}" or ts[index][cp] == ")":
-
-            if ts[index][cp] == "&&":
-                index += 1
+        if match("COMP_OPS_N_ASSIGN", ",","END", "}",")"):
+            if match("&&"):
                 if f_RE() and f_AE1():
                     return True
 
         return False  # This is for the case where <AE'> can be null
 
     def f_RE():
-        global index
         if match("ID", "FINT", "DOUBLE_QUOTE_STRING_CONST", "BOOL", "CHAR", "(", "!", "UNARY_OPS"):
             if f_E():
                 if f_RE1():
@@ -154,19 +148,14 @@ def syntax_analyzer(tokens):
         return False
 
     def f_RE1():
-        global index
-        if ts[index][cp] in relational_operators or ts[index][cp] == "&&" or ts[index][cp] == "||" or ts[index][
-            cp] == "," or ts[index][cp] == ";" or ts[index][cp] == "}" or ts[index][cp] == ")":
-
-            if ts[index][cp] in relational_operators:
-                index += 1
+        if match("COMP_OPS_N_ASSIGN", "COMPOUND_COMP_OPS", ",", ";", "}", ")"):
+            if match("COMP_OPS_N_ASSIGN", "COMPOUND_COMP_OPS"):
                 if f_E():
                     if f_RE1():
                         return True
         return False
 
     def f_E():
-        global index
         if match("ID", "FINT", "DOUBLE_QUOTE_STRING_CONST", "BOOL", "CHAR", "(", "!", "UNARY_OPS"):
             if f_T():
                 if f_E1():
@@ -174,21 +163,14 @@ def syntax_analyzer(tokens):
         return False
 
     def f_E1():
-        global index
-
-        if ts[index][cp] in PM or ts[index][cp] in relational_operators or ts[index][cp] == "&&" or ts[index][
-            cp] == "||" or ts[index][cp] == "," or ts[index][cp] == ";" or ts[index][cp] == "}" or ts[index][cp] == "]":
-            # Perform some action for newline values
-
-            if ts[index][cp] in PM:
-                index += 1
+        if match("+", "-", "COMP_OPS_N_ASSIGN", "COMPOUND_COMP_OPS", ",", ";", "}", "]"):
+            if match("+", "-"):
                 if f_T():
                     if f_E1():
                         return True
         return False
 
     def f_T():
-        global index
         if match("ID", "FINT", "DOUBLE_QUOTE_STRING_CONST", "BOOL", "CHAR", "(", "!", "UNARY_OPS"):
             if f_F():
                 if f_T1():
@@ -196,13 +178,8 @@ def syntax_analyzer(tokens):
         return False
 
     def f_T1():
-        global index
-        if ts[index][cp] in MDM or ts[index][cp] in PM or ts[index][cp] in relational_operators or ts[index][
-            cp] == "&&" or ts[index][cp] == "||" or ts[index][cp] == "," or ts[index][cp] == ";" or ts[index][
-            cp] == "}" or ts[index][cp] == ")":
-
-            if ts[index][cp] in MDM:
-                index += 1
+        if match("OP", "COMP_OPS_N_ASSIGN", "COMPOUND_COMP_OPS", ",", ";", "}", ")"):
+            if match("OP"):
                 if f_F():
                     if f_T1():
                         return True
@@ -213,7 +190,7 @@ def syntax_analyzer(tokens):
             if match("ID"):
                 if f_dot():
                     return True
-            elif f_const():
+            elif match("DOUBLE_QUOTE_STRING_CONST", "FINT", "CHAR", "BOOL"):
                 return True
             elif match("("):
                 if f_OE():
@@ -229,73 +206,50 @@ def syntax_analyzer(tokens):
         return False
 
     def f_dot():
-        global index
-        if ts[index][cp] == "." or ts[index][cp] == "(" or ts[index][cp] == "[" or ts[index][cp] in inc_decs:
-
-            if ts[index][cp] == ".":
-                index += 1
-                if ts[index][cp_] == "variable_pattern":
-                    index += 1
+        if match(".", "DOT", "(", "[", "UNARY_OPS"):
+            if match("."):
+                if match("ID"):
                     if f_dot():
                         return True
-            elif ts[index][cp] == "(":
-                index += 1
+            elif match("("):
                 if f_param():
-                    if ts[index][cp] == ")":
-                        index += 1
-                        if ts[index][cp] == ".":
-                            index += 1
-                            if ts[index][cp_] == "variable_pattern":
-                                index += 1
+                    if match(")"):
+                        if match("."):
+                            if match("ID"):
                                 if f_dot():
                                     return True
-            elif ts[index][cp] == "[":
-                index += 1
+            elif match("["):
                 if f_OE():
-                    if ts[index][cp] == "]":
-                        index += 1
+                    if match("]"):
                         if f_Dim():
-                            if ts[index][cp] == ".":
-                                index += 1
-                                if ts[index][cp_] == "variable_pattern":
-                                    index += 1
+                            if match("."):
+                                if match("ID"):
                                     if f_dot():
                                         return True
             else:
-                if ts[index][cp] in ["++", "--"]:
-                    index += 1
+                if match("UNARY_OPS"):
                     return True
 
         return False
 
     def f_Dim():
-        global index
-        if ts[index][cp] == "[" or ts[index][cp] == "." or ts[index][cp] == ";" or ts[index][cp] == "=":
-
-            if ts[index][cp] == "[":
-                index += 1
+        if match("[", ".", ";", "="):
+            if match("["):
                 if f_OE():
-                    if ts[index][cp] == "]":
-                        index += 1
+                    if match("]"):
                         return True
         return False
 
     def f_param():
-        global index
-        if ts[index][cp_] == "variable_pattern" or ts[index][cp] == "int_const" or ts[index][cp] == "float_const" or \
-                ts[index][cp] == "string_const" or ts[index][cp] == "char_const" or ts[index][cp] == "bool_const" or \
-                ts[index][cp] == "(" or ts[index][cp] == "!" or ts[index][cp] in inc_decs or ts[index][cp] == ")":
-
+        if match("ID", "FINT", "DOUBLE_QUOTE_STRING_CONST", "BOOL", "CHAR", "(", "!", "UNARY_OPS", ")"):
             if f_OE():
                 if f_par():
                     return True
         return False
 
     def f_par():
-        global index
-        if ts[index][cp] == "," or ts[index][cp] == ")":
-            if ts[index][cp] == ",":
-                index += 1
+        if match(",", ")"):
+            if match(","):
                 if f_OE():
                     if f_par():
                         return True
