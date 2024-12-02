@@ -1,0 +1,947 @@
+Start
+0
+Single State
+data Type
+integ
+ID
+a first
+a integ 0 INSIDE JHOOT
+Variable a is added
+Inside A1
+ID
+b integ 0 INSIDE JHOOT
+Variable b is added
+Inside A1
+NULL parha
+integTrue FONAL
+integ a
+a zero
+;
+; n
+Recall Start
+Start
+5
+Single State
+data Type
+str
+ID
+h first
+h str 0 INSIDE JHOOT
+Variable h is added
+Inside A1
+NULL parha
+strTrue FONAL
+str h
+h zero
+;
+; n
+Recall Start
+Start
+8
+Single State
+data Type
+str
+ID
+c first
+c str 0 INSIDE JHOOT
+Variable c is added
+Inside A1
+NULL parha
+strTrue FONAL
+str c
+c zero
+;
+; n
+Recall Start
+Start
+11
+Single State
+data Type
+str
+ID
+k first
+k str 0 INSIDE JHOOT
+Variable k is added
+Inside A1
+NULL parha
+strTrue FONAL
+str k
+k zero
+;
+; n
+Recall Start
+Start
+14
+Single State
+data Type
+fpoint
+ID
+d first
+d fpoint 0 INSIDE JHOOT
+Variable d is added
+Inside A1
+NULL parha
+fpointTrue FONAL
+fpoint d
+d zero
+;
+; n
+Recall Start
+Start
+17
+Single State
+ID
+a
+integ MAMA
+integ
+A2
+Null Parha
+True HOLA
+Ahsaan
+Recall Start
+Start
+20
+Single State
+data Type
+ID
+Here
+data Type
+ID
+a integ 1 INSIDE JHOOT
+Variable a is added
+data Type
+ID
+b integ 1 INSIDE JHOOT
+Variable b is added
+integ,integ PARA_INIT_LIST
+integ,integ PARA_INIT()
+sum integ,integ->fpoint 0 INSIDE JHOOT
+sum integ,integ->fpoint ION
+integ,integ
+Function sum is added
+Single State
+data Type
+fpoint
+ID
+d first
+d fpoint 1 INSIDE JHOOT
+Variable d is added
+Inside A1
+NULL parha
+fpointTrue FONAL
+fpoint d
+d zero
+;
+; n
+Single State
+Recall Start
+Start
+36
+Single State
+ID
+Exp ID c
+str
+str LOOK AT ME
+str MARCOPOLO
+Single State
+body
+Recall Start
+Start
+43
+Single State
+data Type
+ID
+i integ 3 INSIDE JHOOT
+Variable i is added
+Inside A1
+; HIS
+int_const MARCOPOLO
+HEre
+Inside Compatibility Check
+Null Parha
+ID
+Exp ID i
+integ
+integ LOOK AT ME
+ROP_RO
+; HIS
+Inside Compatibility Check
+integ MARCOPOLO
+ID
+Inside A1
+Null Parha
+Single State
+While
+ID
+Exp ID i
+integ
+integ LOOK AT ME
+ROP_RO
+) HIS
+Inside Compatibility Check
+integ MARCOPOLO
+Single State
+Single State
+Single State
+Single State
+3 BEFORE
+0 AFTER
+Recall Start
+Start
+73
+Single State
+data Type
+ID
+Here
+data Type
+ID
+a integ 5 INSIDE JHOOT
+Variable a is added
+data Type
+ID
+b integ 5 INSIDE JHOOT
+Variable b is added
+data Type
+ID
+c integ 5 INSIDE JHOOT
+Variable c is added
+integ,integ,integ PARA_INIT_LIST
+integ,integ,integ PARA_INIT_LIST
+integ,integ,integ PARA_INIT()
+sum integ,integ,integ->integ 0 INSIDE JHOOT
+sum integ,integ,integ->integ ION
+integ,integ,integ
+Function sum is added
+Single State
+data Type
+integ
+ID
+d first
+d integ 5 INSIDE JHOOT
+Variable d is added
+Inside A1
+NULL parha
+integTrue FONAL
+integ d
+d zero
+;
+; n
+Single State
+Recall Start
+Start
+92
+Single State
+data Type
+integ
+ID
+x first
+x integ 0 INSIDE JHOOT
+Variable x is added
+Inside A1
+NULL parha
+integTrue FONAL
+integ x
+x zero
+;
+; n
+Recall Start
+Start
+95
+Single State
+data Type
+ID
+Here
+data Type
+ID
+a str 6 INSIDE JHOOT
+Variable a is added
+data Type
+ID
+b str 6 INSIDE JHOOT
+Variable b is added
+str,str PARA_INIT_LIST
+str,str PARA_INIT()
+sum str,str->str 0 INSIDE JHOOT
+sum str,str->str ION
+str,str
+Function sum is added
+Single State
+Recall Start
+Start
+108
+Single State
+data Type
+integ
+ID
+arr first
+Inside A1
+] HIS
+int_const MARCOPOLO
+] HIS
+int_const MARCOPOLO
+integ[][] LOCAL
+] HIS
+int_const MARCOPOLO
+integ[][][] LOCAL
+AOP
+[
+Second Bracket
+int_const sdsadsd
+] HIS
+int_const MARCOPOLO
+SATURO integ[][][]
+Inside Compatibility Check
+integ[][][] SHOOTING STAR
+integ[][][] SOMEBODY
+[
+int_const sdsadsd
+] HIS
+int_const MARCOPOLO
+SATURO integ[][][]
+Inside Compatibility Check
+integ[][][] LOL
+integ[][][] GHOST
+integ[][][] GHOST
+integ[][][] NEXT TO ME
+integ[][][]
+integ[][][] BOLOGU
+arr integ[][][] 0 INSIDE JHOOT
+Variable arr is added
+; n
+Recall Start
+Start
+130
+Single State
+ID
+x
+integ MAMA
+integ
+A2
+ID
+Exp ID arr
+integ
+] HIS
+int_const MARCOPOLO
+] HIS
+int_const MARCOPOLO
+] HIS
+int_const MARCOPOLO
+integ LOOK AT ME
+integ MARCOPOLO
+integ OOLLA
+integ OOLLA
+Inside Compatibility Check
+Null Parha
+True HOLA
+Ahsaan
+Recall Start
+Start
+143
+ID
+A is added as struct
+data Type
+ID
+g integ public - 0 A INSIDE
+g is added in A as member
+}
+Struct_Stat
+Start
+151
+public LOCKEY
+ID
+ID
+CBA is added as class
+{
+Class_Main_Single_State
+False LANGrAYY
+Access Modifier False
+ID
+A PARENT
+CBA CHILD
+abc A public general 0 CBA INSIDE
+abc is added in CBA as member
+A
+A2
+ID
+Ahsaan
+Class_Main_Single_State
+False LANGrAYY
+Access Modifier False
+data Type
+str
+ID
+u first
+u str public - 0 CBA INSIDE
+u is added in CBA as member
+str u
+u zero
+;
+; n
+Class_Main_Single_State
+False LANGrAYY
+Access Modifier False
+data Type
+integ
+ID
+f first
+f integ public - 0 CBA INSIDE
+f is added in CBA as member
+integ f
+f zero
+;
+; n
+Class_Main_Single_State
+False LANGrAYY
+Access Modifier False
+data Type
+integ
+ID
+x first
+x integ public - 0 CBA INSIDE
+x is added in CBA as member
+integ x
+x zero
+;
+; n
+Class_Main_Single_State
+False LANGrAYY
+Access Modifier False
+data Type
+integ
+ID
+arr first
+] HIS
+] HIS
+] HIS
+integ[][][] so true
+integ[][][] BANANANA
+integ[][][] BANANANA
+] HIS
+SATURO integ[][][]
+Inside Compatibility Check
+[
+integ[][][] BANANANA
+] HIS
+SATURO integ[][][]
+Inside Compatibility Check
+GOJO integ[]
+arr integinteg[] public - 0 CBA INSIDE
+arr is added in CBA as member
+; n
+Class_Main_Single_State
+False LANGrAYY
+Access Modifier False
+data Type
+str
+ID
+arr1 first
+] HIS
+] HIS
+] HIS
+str[][][] so true
+str[][][] BANANANA
+str[][][] BANANANA
+] HIS
+SATURO str[][][]
+Inside Compatibility Check
+[
+str[][][] BANANANA
+] HIS
+SATURO str[][][]
+Inside Compatibility Check
+GOJO str[]
+arr1 strstr[] public - 0 CBA INSIDE
+arr1 is added in CBA as member
+; n
+Class_Main_Single_State
+False LANGrAYY
+Access Modifier False
+ID
+Class_Main_Single_State
+ID
+data Type
+ID
+a integ 7 INSIDE JHOOT
+Variable a is added
+data Type
+ID
+b integ 7 INSIDE JHOOT
+Variable b is added
+integ,integ->constructor UIIOERP
+CBA integ,integ->constructor public static 0 CBA INSIDE
+CBA integ,integ->constructor CBA INSIDE  MT
+CBA function is added in CBA as member
+Class{
+Class_Multiple_State
+data Type
+integ
+ID
+h first
+h integ 7 INSIDE JHOOT
+Variable h is added
+; HIS
+int_const OPERAitOIN
+HEre
+Inside Compatibility Check
+integ h
+h zero
+;
+; n
+Class_Multiple_State
+ID
+; HIS
+Inside Compatibility Check
+True HOLA
+Ahsaan
+Class_Multiple_State
+ID
+; HIS
+Inside Compatibility Check
+True HOLA
+Ahsaan
+Class_Multiple_State
+HERE;
+CLASSS BODYYY
+Class_Main_Single_State
+ID
+void->constructor UIIOERP
+CBA void->constructor public static 0 CBA INSIDE
+CBA void->constructor CBA INSIDE  MT
+CBA function is added in CBA as member
+Class{
+Class_Multiple_State
+CLASSS BODYYY
+Class_Main_Single_State
+False LANGrAYY
+Access Modifier False
+) JADOOO
+Class{
+Class_Multiple_State
+data Type
+integ
+ID
+a first
+a integ 9 INSIDE JHOOT
+Variable a is added
+ID
+b integ public - 0 CBA INSIDE
+b is added in CBA as member
+integ a
+a zero
+;
+; n
+Class_Multiple_State
+HERE;
+IGI
+9 BEFORE
+0 AFTER
+Class_Main_Single_State
+False LANGrAYY
+Access Modifier False
+Class_func
+HOOOLA def
+ID
+data Type
+ID
+a integ 10 INSIDE JHOOT
+Variable a is added
+data Type
+ID
+b integ 10 INSIDE JHOOT
+Variable b is added
+integ,integ->integ mul CBA KING
+mul integ,integ->integ public virtual 0 CBA INSIDE
+mul integ,integ->integ CBA INSIDE  MT
+mul function is added in CBA as member
+)
+{ Class_Func_body
+Class{
+Class_Multiple_State
+
+ID
+integ
+integ INSIDE TS()
+integ AM
+TS List Done
+Class_Multiple_State
+HERE;
+Class_Main_Single_State
+False LANGrAYY
+Access Modifier False
+Class_func
+HOOOLA def
+ID
+data Type
+ID
+a integ 11 INSIDE JHOOT
+Variable a is added
+data Type
+ID
+b integ 11 INSIDE JHOOT
+Variable b is added
+sum integ,integ->A public - 0 CBA FUNCTION
+sum integ,integ->A public - 0 CBA INSIDE
+sum integ,integ->A CBA INSIDE  MT
+sum function is added in CBA as member
+{ Class_Func_body
+Class{
+Class_Multiple_State
+Class_Main_Single_State
+False LANGrAYY
+Access Modifier False
+
+ID
+integ
+integ INSIDE TS()
+Exp ID f
+ROP_RO
+) HIS
+Inside Compatibility Check
+Class{
+Class_Multiple_State
+data Type
+integ
+ID
+x first
+x integ 12 INSIDE JHOOT
+Variable x is added
+ID
+y integ public - 0 CBA INSIDE
+y is added in CBA as member
+integ x
+x zero
+;
+; n
+Class_Multiple_State
+
+ID
+integ
+integ INSIDE TS()
+integ AM
+TS List Done
+Class_Multiple_State
+data Type
+integ
+ID
+g first
+g integ 12 INSIDE JHOOT
+Variable g is added
+; HIS
+int_const OPERAitOIN
+HEre
+Inside Compatibility Check
+integ g
+g zero
+;
+; n
+Class_Multiple_State
+HERE;
+Class_Main_Single_State
+False LANGrAYY
+Access Modifier False
+False LANGrAYY
+Access Modifier False
+Class Stat
+Start
+317
+public LOCKEY
+ID
+ID
+ABC is added as class
+{
+Class_Main_Single_State
+False LANGrAYY
+Access Modifier False
+Class_func
+HOOOLA def
+ID
+data Type
+ID
+x integ 13 INSIDE JHOOT
+Variable x is added
+data Type
+ID
+y integ 13 INSIDE JHOOT
+Variable y is added
+finding integ,integ->CBA public - 0 ABC FUNCTION
+finding integ,integ->CBA public - 0 ABC INSIDE
+finding integ,integ->CBA ABC INSIDE  MT
+finding function is added in ABC as member
+{ Class_Func_body
+Class{
+Class_Multiple_State
+data Type
+integ
+ID
+a first
+a integ 13 INSIDE JHOOT
+Variable a is added
+integ a
+a zero
+;
+; n
+Class_Multiple_State
+HERE;
+Class_Main_Single_State
+private LANGrAYY
+Class_Main_Single_State
+False LANGrAYY
+Access Modifier False
+data Type
+integ
+ID
+f first
+f integ private - 0 ABC INSIDE
+f is added in ABC as member
+ID
+g integ private - 0 ABC INSIDE
+g is added in ABC as member
+ID
+h integ private - 0 ABC INSIDE
+h is added in ABC as member
+integ f
+f zero
+;
+; n
+Class_Main_Single_State
+ID
+void->constructor UIIOERP
+ABC void->constructor public static 0 ABC INSIDE
+ABC void->constructor ABC INSIDE  MT
+ABC function is added in ABC as member
+Class{
+Class_Multiple_State
+CLASSS BODYYY
+Class_Main_Single_State
+ID
+data Type
+ID
+i integ 15 INSIDE JHOOT
+Variable i is added
+data Type
+ID
+j integ 15 INSIDE JHOOT
+Variable j is added
+integ,integ->constructor UIIOERP
+ABC integ,integ->constructor public static 0 ABC INSIDE
+ABC integ,integ->constructor ABC INSIDE  MT
+ABC function is added in ABC as member
+Class{
+Class_Multiple_State
+CLASSS BODYYY
+Class_Main_Single_State
+False LANGrAYY
+Access Modifier False
+Class_func
+HOOOLA def
+ID
+(
++ Overloaded for class ABC
+) THERE
+{ Class_Func_body
+Class{
+Class_Multiple_State
+Class_Main_Single_State
+public LANGrAYY
+Class_Main_Single_State
+False LANGrAYY
+Access Modifier False
+Class_func
+HOOOLA def
+ID
+(
+= Overloaded for class ABC
+data Type
+ID
+a integ 17 INSIDE JHOOT
+Variable a is added
+data Type
+ID
+b integ 17 INSIDE JHOOT
+Variable b is added
+) THERE
+{ Class_Func_body
+Class{
+Class_Multiple_State
+data Type
+integ
+ID
+c first
+c integ 17 INSIDE JHOOT
+Variable c is added
+integ c
+c zero
+;
+; n
+Class_Multiple_State
+HERE;
+Class_Main_Single_State
+False LANGrAYY
+Access Modifier False
+Class_func
+HOOOLA def
+ID
+sum KILL
+data Type
+ID
+x integ 18 INSIDE JHOOT
+Variable x is added
+data Type
+ID
+y integ 18 INSIDE JHOOT
+Variable y is added
+integ,integ->integ YEH RAHA T
+sum integ,integ->integ public static 0 ABC INSIDE
+sum integ,integ->integ ABC INSIDE  MT
+sum function is added in ABC as member
+)
+{ Class_Func_body
+Class{
+Class_Multiple_State
+Class_Main_Single_State
+False LANGrAYY
+Access Modifier False
+False LANGrAYY
+Access Modifier False
+Class Stat
+Start
+412
+private LOCKEY
+ID
+BBC is added as class
+{
+Class_Main_Single_State
+False LANGrAYY
+Access Modifier False
+False LANGrAYY
+Access Modifier False
+Class Stat
+Start
+418
+Single State
+data Type
+integ
+ID
+o first
+o integ 17 INSIDE JHOOT
+Variable o is added
+Inside A1
+NULL parha
+integTrue FONAL
+integ o
+o zero
+;
+; n
+Recall Start
+Start
+421
+Single State
+data Type
+integ
+ID
+p first
+p integ 17 INSIDE JHOOT
+Variable p is added
+Inside A1
+ID
+k integ 17 INSIDE JHOOT
+Variable k is added
+Inside A1
+NULL parha
+integTrue FONAL
+integ p
+p zero
+;
+; n
+Recall Start
+Start
+426
+Single State
+ID
+ABC
+ID
+integ, Juice
+ID
+GERE
+integ,integ
+sum integ,integ ABC INSIDE  MT
+Recall Start
+Start
+434
+Single State
+ID
+ABC
+sum void ABC INSIDE  MT
+Recall Start
+Start
+439
+Single State
+ID
+A
+haris A 17 INSIDE JHOOT
+Object haris is added
+Variable haris is added
+A
+A2
+Ahsaan
+Recall Start
+Start
+442
+Single State
+ID
+ABC
+zaid ABC 17 INSIDE JHOOT
+Object zaid is added
+Variable zaid is added
+ABC
+A2
+Ahsaan
+Recall Start
+Start
+445
+Single State
+ID
+ABC
+rafay ABC 17 INSIDE JHOOT
+Object rafay is added
+Variable rafay is added
+ABC
+A2
+Ahsaan
+Recall Start
+Start
+448
+Single State
+ID
+ABC
+hadi ABC 17 INSIDE JHOOT
+Object hadi is added
+Variable hadi is added
+ABC
+A2
+Ahsaan
+Recall Start
+Start
+451
+Single State
+ID
+rafay
+ABC MAMA
+ABC
+A2
+ID
+Exp ID zaid
+ABC
+ABC LOOK AT ME
+ID
+Exp ID rafay
+ABC
+ABC LOOK AT ME
+Inside Compatibility Check
+ABC
+ID
+Exp ID p
+integ
+integ LOOK AT ME
+Inside Compatibility Check
+rafay (ABC)  can't + with p (integ) in line no 104

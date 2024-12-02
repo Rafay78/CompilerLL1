@@ -1,0 +1,115 @@
+integ a,b;
+str h;
+str c;
+str k;
+fpoint d;
+a++;
+def fpoint sum(integ a , integ b){
+    fpoint d;
+};
+provide(c){};
+for(integ i = 0 ; i < 4 ; i++){
+    while(i>5){
+        break;
+    };
+    continue;
+};
+
+def integ sum(integ a , integ b,integ c){
+    integ d;
+};
+integ x;
+
+def str sum(str a,str b){};
+integ arr[4][7][9]=[[3],[45]];
+x  =arr[3][4][5];
+
+struct A{
+    integ g;
+};
+
+abstract class CBA inherit A{
+    A abc;
+    str u ;
+    integ f;
+    integ x;
+    integ arr[4][7][9]=[[3],[45]];
+    str arr1[4][5][6]=[["a"],["b"]];
+
+    x++;
+
+    construct CBA (integ a, integ b){
+        integ h = 5;
+        a=8;
+        a=0;
+    };
+    construct CBA(){};
+    for(;;){
+        integ a ,b;
+
+    };
+    def virtual integ mul(integ a ,integ b){
+        this->f;
+    };
+    
+
+    def A sum (integ a,integ b){};
+    
+    provide(this->f<4){
+        integ x,y;
+        this->f++;
+        integ g= 50;
+    };
+};
+
+
+class ABC inherit CBA{
+    def CBA finding (integ x , integ y){integ a;};
+    private:
+    integ f,g,h;
+
+    construct ABC(){};
+    construct ABC(integ i , integ j){};
+
+    def friend ABC operator+(){};
+    public:
+    def friend ABC operator=(integ a,integ b){
+        integ c;
+    };
+
+    def static integ sum (integ x,integ y){
+        #super.mul(x,y);
+
+    };
+
+   # def integ mul(integ x,integ y){};
+
+    
+    
+};
+private class BBC{};
+
+
+
+integ o;
+integ p,k;
+ABC sum(o,p);
+ABC sum();
+A haris;
+#ABC AR:CBA(o);
+ABC zaid;
+ABC rafay;
+
+ABC hadi;
+rafay= zaid+rafay+p;
+integ z;
+integ m;
+str j;
+rafay.finding(p,k).sum(p,k).g=7;
+#o=zaid.mul(z,m);
+def integ insert(){};
+def integ insert(integ z){};
+insert();
+m=insert(m);
+
+
